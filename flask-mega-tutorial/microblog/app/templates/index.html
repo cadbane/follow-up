@@ -10,5 +10,14 @@
 </head>
 <body>
     <h2>Hello {{ user.name }}, how are you?</h2>
+    <h3>Posts:</h3>
+    {% for post in posts %}
+    <div>
+        <p>
+            <b>{{ post.author.name }}:</b>
+            <i>{{ post.title }}</i>
+        </p>
+    </div>
+    {% endfor %}
 </body>
 </html>
