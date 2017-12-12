@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% if title %}
-    <title>{{ title }}</title>
-    {% else %}
-    <title>Hello</title>
-    {% endif %}
-</head>
-<body>
-    <h2>Hello {{ user.name }}, how are you?</h2>
-    <h3>Posts:</h3>
-    {% for post in posts %}
-    <div>
-        <p>
-            <b>{{ post.author.name }}:</b>
-            <i>{{ post.title }}</i>
-        </p>
-    </div>
-    {% endfor %}
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block posts_block %}
+<h2>Hello {{ user.name }}, how are you?</h2>
+<hr />
+<h3>Posts:</h3>
+{% for post in posts %}
+<div>
+    <p>
+        <b>{{ post.author.name }}:</b>
+        <i>{{ post.title }}</i>
+    </p>
+</div>
+{% endfor %}
+{% endblock %}
