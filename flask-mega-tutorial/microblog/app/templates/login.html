@@ -7,10 +7,20 @@
         <tr>
             <td>{{ form.username.label }}</td>
             <td>{{ form.username(size=32) }}</td>
+            <td>
+                {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </td>
         </tr>
         <tr>
             <td>{{ form.password.label }}</td>
             <td>{{ form.password(size=32) }}</td>
+            <td>
+                {% for error in form.password.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </td>
         </tr>
         <tr>
             <td>{{ form.remember_me() }} {{ form.remember_me.label }}</td>
